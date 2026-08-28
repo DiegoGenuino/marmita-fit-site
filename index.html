@@ -223,14 +223,18 @@ section[id]{scroll-margin-top:96px}
 .add.done{background:var(--ink);color:var(--lime)}
 
 /* ---------- faixa de promessa ---------- */
-.promise{background:var(--paper);border-block:3px solid var(--ink);position:relative;overflow:hidden}
-.promise .wrap{position:relative;padding-block:clamp(56px,9vw,100px);display:grid;justify-items:center;text-align:center;gap:18px}
-.promise h2{font-size:clamp(40px,8vw,84px);color:var(--leaf)}
-.promise-art{position:relative;margin-top:20px;width:min(100%,460px)}
-.promise-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;
-  border:3px solid var(--ink);border-radius:var(--radius);box-shadow:var(--shadow)}
-.promise-img.is-placeholder{object-fit:contain;background:var(--cream-2);padding:10px}
-.pst{position:absolute}
+.promise{
+  background:
+    linear-gradient(180deg, rgba(15,58,36,.94) 0%, rgba(15,58,36,.68) 32%, rgba(15,58,36,.68) 68%, rgba(15,58,36,.94) 100%),
+    var(--promise-photo) center/cover no-repeat;
+  background-blend-mode:multiply;
+  border-block:3px solid var(--ink);position:relative;overflow:hidden
+}
+.promise .wrap{position:relative;z-index:2;padding-block:clamp(56px,9vw,100px);display:grid;justify-items:center;text-align:center;gap:18px}
+.promise h2{font-size:clamp(40px,8vw,84px);color:var(--lime)}
+.promise .wrap>p{color:var(--paper)}
+.promise-art{position:relative;margin-top:20px;width:min(100%,460px);min-height:clamp(140px,22vw,220px)}
+.pst{position:absolute;color:var(--ink)}
 .pst1{top:2%;left:0;transform:rotate(-10deg);background:var(--sky)}
 .pst2{top:0;right:0;transform:rotate(9deg);background:var(--beet);color:#fff}
 .pst3{bottom:10%;left:-2%;transform:rotate(7deg);background:var(--butter)}
@@ -443,7 +447,7 @@ window.fotoFallback = img => window.__semFoto.push(img);
   <!-- FOTO DA HERO: troque o src por uma foto real (paisagem, 1600x1200 ou maior).
        Enquanto o arquivo não existir, entra um placeholder ilustrado. -->
   <div class="hero-bg-wrap" aria-hidden="true">
-    <img class="hero-bg" src="fotos/hero-marmita.jpg" data-dish="1" alt="" onerror="fotoFallback(this)">
+    <img class="hero-bg" src="assets/proteina-de-soja-arroz-feijao-carioca-e-brocolis-0-300g-1751637155542.avif" data-dish="1" alt="" onerror="fotoFallback(this)">
   </div>
 </section>
 
@@ -478,7 +482,7 @@ window.fotoFallback = img => window.__semFoto.push(img);
   </div>
 </div>
 <!-- ===================== PROMESSA ===================== -->
-<section class="promise">
+<section class="promise" style="--promise-photo:url('assets/proteina-de-soja-arroz-feijao-carioca-e-brocolis-0-300g-1751637155542.avif')">
   <div class="wrap rv">
     <p class="eyebrow" style="color:var(--coral)">Nada de dieta triste</p>
     <h2>Leve não precisa<br>ser sem graça</h2>
@@ -488,7 +492,6 @@ window.fotoFallback = img => window.__semFoto.push(img);
       <span class="sticker pst pst2">Até 30 dias<br>no freezer</span>
       <span class="sticker pst pst3">Opções<br>low carb</span>
       <span class="sticker pst pst4">Versões<br>veganas</span>
-      <img class="promise-img" src="fotos/marmita-aberta.jpg" data-dish="3" alt="Marmita aberta com legumes, proteína e arroz" loading="lazy" onerror="fotoFallback(this)">
     </div>
   </div>
 </section>
@@ -533,27 +536,27 @@ window.fotoFallback = img => window.__semFoto.push(img);
 
     <div class="wall rv">
       <figure class="shot">
-        <img src="fotos/clientes/01.jpg" data-dish="1" alt="Kit Semana entregue, com dez marmitas empilhadas" loading="lazy" onerror="fotoFallback(this)">
+        <img src="assets/frango-assado-arroz-integral-com-brocolis-e-pure-de-batata-0-300g-1780934568959.avif" data-dish="1" alt="Kit Semana entregue, com dez marmitas empilhadas" loading="lazy">
         <figcaption>Kit Semana · 10 marmitas</figcaption>
       </figure>
       <figure class="shot">
-        <img src="fotos/clientes/02.jpg" data-dish="4" alt="Marmitas organizadas na gaveta do freezer" loading="lazy" onerror="fotoFallback(this)">
+        <img src="assets/frango-assado-arroz-integral-com-brocolis-e-pure-de-batata-0-300g-1780934568959.avif" alt="Marmitas organizadas na gaveta do freezer" loading="lazy">
         <figcaption>Freezer organizado de domingo</figcaption>
       </figure>
       <figure class="shot">
-        <img src="fotos/clientes/03.jpg" data-dish="7" alt="Marmita aberta pronta para esquentar no micro-ondas" loading="lazy" onerror="fotoFallback(this)">
+        <img src="assets/frango-assado-arroz-integral-com-brocolis-e-pure-de-batata-0-300g-1780934568959.avif" alt="Marmita aberta pronta para esquentar no micro-ondas" loading="lazy">
         <figcaption>Almoço de terça em 4 minutos</figcaption>
       </figure>
       <figure class="shot">
-        <img src="fotos/clientes/04.jpg" data-dish="2" alt="Bolsa térmica no momento da entrega" loading="lazy" onerror="fotoFallback(this)">
+        <img src="assets/frango-assado-arroz-integral-com-brocolis-e-pure-de-batata-0-300g-1780934568959.avif" alt="Bolsa térmica no momento da entrega" loading="lazy">
         <figcaption>Entrega da sexta, ainda congelada</figcaption>
       </figure>
       <figure class="shot">
-        <img src="fotos/clientes/05.jpg" data-dish="4" alt="Marmita de salmão com legumes servida no prato" loading="lazy" onerror="fotoFallback(this)">
+        <img src="assets/frango-assado-arroz-integral-com-brocolis-e-pure-de-batata-0-300g-1780934568959.avif" alt="Marmita de salmão com legumes servida no prato" loading="lazy">
         <figcaption>Salmão com legumes no prato</figcaption>
       </figure>
       <figure class="shot">
-        <img src="fotos/clientes/06.jpg" data-dish="10" alt="Mousse de cacau em pote individual" loading="lazy" onerror="fotoFallback(this)">
+        <img src="assets/frango-assado-arroz-integral-com-brocolis-e-pure-de-batata-0-300g-1780934568959.avif" alt="Mousse de cacau em pote individual" loading="lazy">
         <figcaption>Fit doce que sumiu no mesmo dia</figcaption>
       </figure>
     </div>
@@ -788,16 +791,16 @@ const CATS = [
 
 // art: [carboidrato, proteína, vegetal] · bg: fundo do card
 const MENU = [
-  {id:1,  nome:"Frango grelhado com batata-doce", cat:"proteica", desc:"Filé grelhado no alho, batata-doce assada e brócolis no vapor.", kcal:420, prot:38, preco:24.90, bg:"#FFC93C", art:["#FF9B3D","#FFFBF2","#2E9E4F"], foto:"fotos/frango-batata-doce.jpg"},
-  {id:2,  nome:"Strogonoff fit de frango",        cat:"proteica", desc:"Molho de iogurte grego, arroz integral e batata palha assada.", kcal:480, prot:35, preco:26.90, bg:"#7ED0E8", art:["#F3E7C8","#FF5B2E","#C8EF4D"], foto:"fotos/strogonoff-frango.jpg"},
-  {id:3,  nome:"Carne moída com purê de mandioquinha", cat:"proteica", desc:"Patinho moído refogado, purê cremoso e vagem salteada.", kcal:510, prot:32, preco:27.90, bg:"#FFB3C7", art:["#FFD98A","#8A4B2A","#2E9E4F"], foto:"fotos/carne-moida-mandioquinha.jpg"},
-  {id:4,  nome:"Salmão com legumes na manteiga de ervas", cat:"lowcarb", desc:"Posta de salmão, abobrinha, cenoura e aspargos.", kcal:460, prot:34, preco:34.90, bg:"#C8EF4D", art:["#FFB07A","#FF7A59","#2E9E4F"], foto:"fotos/salmao-legumes.jpg"},
-  {id:5,  nome:"Omelete de forno com abobrinha",  cat:"lowcarb", desc:"Ovos caipiras, abobrinha, tomate seco e queijo minas.", kcal:320, prot:26, preco:22.90, bg:"#FFE9C2", art:["#FFD34D","#FFFBF2","#2E9E4F"], foto:"fotos/omelete-abobrinha.jpg"},
-  {id:6,  nome:"Escondidinho de frango e couve-flor", cat:"lowcarb", desc:"Frango desfiado com creme de couve-flor gratinado.", kcal:390, prot:33, preco:25.90, bg:"#FF9E7A", art:["#FFFBF2","#FFC93C","#2E9E4F"], foto:"fotos/escondidinho-frango.jpg"},
-  {id:7,  nome:"Curry de grão-de-bico",           cat:"veggie",  desc:"Grão-de-bico no leite de coco, arroz integral e couve crocante.", kcal:450, prot:18, preco:23.90, bg:"#FFD98A", art:["#F3E7C8","#FFA22B","#2E9E4F"], foto:"fotos/curry-grao-de-bico.jpg"},
-  {id:8,  nome:"Feijoada leve de legumes",        cat:"veggie",  desc:"Feijão preto com legumes defumados, arroz e couve.", kcal:400, prot:16, preco:23.90, bg:"#B7E1EE", art:["#F3E7C8","#3B2A22","#2E9E4F"], foto:"fotos/feijoada-legumes.jpg"},
-  {id:9,  nome:"Panqueca de banana com aveia",    cat:"doce",    desc:"Três panquecas com pasta de amendoim e canela. Café da manhã pronto.", kcal:280, prot:12, preco:16.90, bg:"#FFC93C", art:["#E8B872","#FFD98A","#C8EF4D"], foto:"fotos/panqueca-banana.jpg"},
-  {id:10, nome:"Mousse de cacau com whey",        cat:"doce",    desc:"Cacau 70%, whey baunilha e raspas de castanha.", kcal:180, prot:20, preco:12.90, bg:"#E7B7D6", art:["#5B3A2E","#8A5A44","#FFD98A"], foto:"fotos/mousse-cacau.jpg"}
+  {id:1,  nome:"Frango grelhado com batata-doce", cat:"proteica", desc:"Filé grelhado no alho, batata-doce assada e brócolis no vapor.", kcal:420, prot:38, preco:24.90, bg:"#FFC93C", art:["#FF9B3D","#FFFBF2","#2E9E4F"], foto:"assets/proteina-de-soja-arroz-feijao-carioca-e-brocolis-0-300g-1751637155542.avif"},
+  {id:2,  nome:"Strogonoff fit de frango",        cat:"proteica", desc:"Molho de iogurte grego, arroz integral e batata palha assada.", kcal:480, prot:35, preco:26.90, bg:"#7ED0E8", art:["#F3E7C8","#FF5B2E","#C8EF4D"], foto:"assets/proteina-de-soja-arroz-feijao-carioca-e-brocolis-0-300g-1751637155542.avif"},
+  {id:3,  nome:"Carne moída com purê de mandioquinha", cat:"proteica", desc:"Patinho moído refogado, purê cremoso e vagem salteada.", kcal:510, prot:32, preco:27.90, bg:"#FFB3C7", art:["#FFD98A","#8A4B2A","#2E9E4F"], foto:"assets/proteina-de-soja-arroz-feijao-carioca-e-brocolis-0-300g-1751637155542.avif"},
+  {id:4,  nome:"Salmão com legumes na manteiga de ervas", cat:"lowcarb", desc:"Posta de salmão, abobrinha, cenoura e aspargos.", kcal:460, prot:34, preco:34.90, bg:"#C8EF4D", art:["#FFB07A","#FF7A59","#2E9E4F"], foto:"assets/proteina-de-soja-arroz-feijao-carioca-e-brocolis-0-300g-1751637155542.avif"},
+  {id:5,  nome:"Omelete de forno com abobrinha",  cat:"lowcarb", desc:"Ovos caipiras, abobrinha, tomate seco e queijo minas.", kcal:320, prot:26, preco:22.90, bg:"#FFE9C2", art:["#FFD34D","#FFFBF2","#2E9E4F"], foto:"assets/proteina-de-soja-arroz-feijao-carioca-e-brocolis-0-300g-1751637155542.avif"},
+  {id:6,  nome:"Escondidinho de frango e couve-flor", cat:"lowcarb", desc:"Frango desfiado com creme de couve-flor gratinado.", kcal:390, prot:33, preco:25.90, bg:"#FF9E7A", art:["#FFFBF2","#FFC93C","#2E9E4F"], foto:"assets/proteina-de-soja-arroz-feijao-carioca-e-brocolis-0-300g-1751637155542.avif"},
+  {id:7,  nome:"Curry de grão-de-bico",           cat:"veggie",  desc:"Grão-de-bico no leite de coco, arroz integral e couve crocante.", kcal:450, prot:18, preco:23.90, bg:"#FFD98A", art:["#F3E7C8","#FFA22B","#2E9E4F"], foto:"assets/proteina-de-soja-arroz-feijao-carioca-e-brocolis-0-300g-1751637155542.avif"},
+  {id:8,  nome:"Feijoada leve de legumes",        cat:"veggie",  desc:"Feijão preto com legumes defumados, arroz e couve.", kcal:400, prot:16, preco:23.90, bg:"#B7E1EE", art:["#F3E7C8","#3B2A22","#2E9E4F"], foto:"assets/proteina-de-soja-arroz-feijao-carioca-e-brocolis-0-300g-1751637155542.avif"},
+  {id:9,  nome:"Panqueca de banana com aveia",    cat:"doce",    desc:"Três panquecas com pasta de amendoim e canela. Café da manhã pronto.", kcal:280, prot:12, preco:16.90, bg:"#FFC93C", art:["#E8B872","#FFD98A","#C8EF4D"], foto:"assets/proteina-de-soja-arroz-feijao-carioca-e-brocolis-0-300g-1751637155542.avif"},
+  {id:10, nome:"Mousse de cacau com whey",        cat:"doce",    desc:"Cacau 70%, whey baunilha e raspas de castanha.", kcal:180, prot:20, preco:12.90, bg:"#E7B7D6", art:["#5B3A2E","#8A5A44","#FFD98A"], foto:"assets/proteina-de-soja-arroz-feijao-carioca-e-brocolis-0-300g-1751637155542.avif"}
 ];
 
 /* ---------- arte SVG das marmitas ---------- */
